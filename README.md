@@ -11,4 +11,4 @@ Cattle farming, a critical agricultural activity, faces economic losses due to h
 ### Data
 The data utilized in this study are available under a Creative Commons Attribution 4.0 International (CC BY 4.0) license through the WDC-Climate platform. 
 
-**Data Citation :** Georgiades, Pantelis (2024). Temperature Humidity Index GDDP-NEX-CMIP6 ML projections. World Data Center for Climate (WDCC) at DKRZ. https://doi.org/10.26050/WDCC/THI
+**Data Citation:** Georgiades, Pantelis (2024). Temperature Humidity Index GDDP-NEX-CMIP6 ML projections. World Data Center for Climate (WDCC) at DKRZ. https://doi.org/10.26050/WDCC/THI
