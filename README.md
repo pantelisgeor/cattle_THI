@@ -1,4 +1,4 @@
-# Climate Change and Thermal Stress in Cattle: Global Projections with High Temporal Resolution2
+# Climate Change and Thermal Stress in Cattle: Global Projections with High Temporal Resolution
 
 M. Neira, P. Georgiades, Y. Proestos, T. Economou, J. Araya, S Malas, M. Omirou, D. Sparaggis, G. Hadjipavlou, J. Lelieveld
 
