@@ -1,6 +1,7 @@
 # Climate Change and Thermal Stress in Cattle: Global Projections with High Temporal Resolution2
 
 M. Neira, P. Georgiades, Y. Proestos, T. Economou, J. Araya, S Malas, M. Omirou, D. Sparaggis, G. Hadjipavlou, J. Lelieveld
+
 **Correspondence:** Pantelis Georgiades (p.georgiades@cyi.ac.cy) Marco Neira (m.neira@cyi.ac.cy)
 
 ## Abstract
