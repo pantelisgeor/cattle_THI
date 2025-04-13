@@ -9,7 +9,41 @@ Cattle farming, a critical agricultural activity, faces economic losses due to h
 
 ## Instructions
 
+### Environment
+
+Create a new environment and install the following dependencies:
+
+1. cdsapi
+2. 
+
 ### Data
+
+**ERA5 hourly data on single levels from 1940 to present**
+
+For the historical period, the 2m temperature and 2m dewpoint temperature global ERA5 reanalysis datasets are needed for the period that spans 1990-2019. To download the data, run the src/download_ERA.py script as follows:
+
+```python
+python src/downloadERA.py --path=<insert target directory here>
+```
+
+**Hourly THI projections**
+
 The data utilized in this study are available under a Creative Commons Attribution 4.0 International (CC BY 4.0) license through the WDC-Climate platform. 
 
 **Data Citation:** Georgiades, Pantelis (2024). Temperature Humidity Index GDDP-NEX-CMIP6 ML projections. World Data Center for Climate (WDCC) at DKRZ. https://doi.org/10.26050/WDCC/THI
+
+**Instructions**
+
+1. Download the THI hourly predictions data from https://doi.org/10.26050/WDCC/THI.
+2. Create a directory for each model and download the hourly THI data for the two scenarios to it's respective directory, like shown below.
+
+<p align="center">
+  <img width="138" height="349" src="data_structure.png">
+</p>
+
+**Global cattle distribution**
+
+The global cattle distribution data used in this study is decribed and freely distributed in Gilbert, M., Nicolas, G., Cinardi, G., Van Boeckel, T. P., Vanwambeke, S. O., Wint,535
+G., & Robinson, T. P. (2018). Global distribution data for cattle, buffaloes,536
+horses, sheep, goats, pigs, chickens and ducks in 2010. Scientific data, 5 (1), 1–11.
+
