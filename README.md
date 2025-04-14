@@ -111,3 +111,36 @@ python src/THI_load_yearly.py \
 
 **Heat Waves**
 
+To calculate the heat waves data run the *heat_waves.sh* bash script with following 5 positional arguments:
+
+```
+chmod +x heat_waves.sh
+./heat_waves.sh <pathERA> <pathTarget> <pathDat> <path to CMIP6 land sea mask> <path to ERA5 land sea mask>
+```
+
+Following this run the *heat_waves_combine.py* script to combine the datasets into yearly summaries:
+
+```
+python src/heat_waves_combine.py \
+  --pathDat=<Path to the generated heat waved datasets.> \
+  --pathLSM=<Path to the CMIP6 land sea mask.>
+```
+
+**Cattle Distribution**
+
+The first step is to convert the GeoTIFF cattle distribution data to netcdf and interpolate the dataset to match the THI projections spatial resolution:
+
+```
+python src/cattle_interp.py \
+  --pathDat=<Path to cattle distribution datasets> \
+  --testDat=<Path to any THI projection dataset.>
+```
+
+Finally, to combine the data with the cattle distribution dataset, run the following:
+
+```
+python src/cattle_combine.py \
+  --pathTarget=<Path to the target directory to store the results of the script.> \
+  --pathHrsAbove=<Path to the hours above threshold dataset.> \
+  --pathCattle=<Path to the cattle distribution dataset (interpolated).>
+```
