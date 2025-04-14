@@ -9,9 +9,10 @@ from tqdm.contrib.concurrent import process_map
 from tqdm import tqdm
 import argparse
 
-parser = argparse.ArgumentParser
+parser = argparse.ArgumentParser()
 parser.add_argument("--pathTarget", type=str, help="Path to directory where target data will be stored.")
 parser.add_argument("--pathDat", type=str, help="Path to directory where the hours above threshold data is stored.")
+parser.add_argument("--pathLSM", type=str, help="Path to directory where the CMIP6 land sea mask is stored.")
 args = parser.parse_args()
 
 # Path to target directory
@@ -87,7 +88,7 @@ def getModel(model, df_):
 if __name__ == "__main__":
     # Merge with land sea mask
     # Land sea mask
-    lsm = xr.open_dataset("../CMIP6_lsm.nc")
+    lsm = xr.open_dataset(args.pathLSM)
     # Make the land sea mask a binary mask
     lsm["lsm"] = xr.where(lsm.lsm > 0, 1, np.nan)
 

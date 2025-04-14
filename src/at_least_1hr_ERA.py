@@ -75,16 +75,22 @@ def getModel(model, df_):
 
 # ===============================  =============================== #
 if __name__ == "__main__":
+    
+    # Parse the arguments
+    parser = argparse.ArgumentPareser()
+    parser.add_argument("--pathTarget", type=str, help="Path to directory where target data will be stored.")
+    parser.add_argument("--pathDat", type=str, help="Path to directory where the hours above threshold data is stored.")
+    parser.add_argument("--pathLSM", type=str, help="Path to directory where the ERA5 land sea mask is stored.")
+    args = parser.parse_args()
 
-    os.chdir("/nvme/h/pgeorgiades/data_p143/cattle_heat/THI_paper/" +
-         "predictions_analysis/at_least_1_hr")
-
+    path_target = args.pathTarget
+    os.chdir(path_target)
     # Path to data with hours above threshold per day
-    pathDat = "../hrs_above_thr"
+    pathDat = args.pathDat
     
     # Merge with land sea mask
     # Land sea mask
-    lsm = xr.open_dataset("../ERA5_lsm.nc").rename({"longitude": "lon",
+    lsm = xr.open_dataset(args.pathLSM).rename({"longitude": "lon",
                                                     "latitude": "lat"})
     # Make the land sea mask a binary mask
     lsm["lsm"] = xr.where(lsm.lsm > 0, 1, np.nan)

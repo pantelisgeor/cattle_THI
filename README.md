@@ -14,7 +14,10 @@ Cattle farming, a critical agricultural activity, faces economic losses due to h
 Create a new environment and install the following dependencies:
 
 1. cdsapi
-2. 
+2. glob
+3. xarray, netcdf4
+4. pandas, numpy
+5. tqdm
 
 ### Data
 
@@ -51,7 +54,7 @@ The global cattle distribution data used in this study is decribed and freely di
 
 To calculate the hours above the two THI thresholds (68.8 and 84) per day/grid cell, the *hrs_above_thr_analysis.py* script is used as follows:
 
-```python
+```
 python src/hrs_above_thr_analysis.py \
   --pathTHI=<Path to directory where hourly THI proections are stored> \
   --pathTarget=<Path to directory where the analysed data will be stored> \
@@ -62,7 +65,7 @@ python src/hrs_above_thr_analysis.py \
 
 The previous script will generate yearly netcdf files for each scenario/year/model combination with the total number of hours above the threshold for each day. To combine them in a yearly dataset the *src/hrs_above_yearly_averages.py* script is used, as:
 
-```python
+```
 python src/hrs_above_yearly_averages.py \
   --pathDat=<Path to where the daily total number of hours above the threshold datasets are stored.>
 ```
@@ -71,6 +74,17 @@ python src/hrs_above_yearly_averages.py \
 
 To calculate the number of days per grid cell per year that there is at least one hour above the specified THI threshold, the *src/at_least_1hr.py* and *src/at_least_1hr_ERA.py* scripts are used. These scripts use the same output from the previous analysis, so make sure to have created these first before running these two scripts:
 
-```python
+```
+python src/at_least_1hr.py \
+  --pathTarget=<Path to directory where data will be stored.> \
+  --pathDat=<Path to directory where hours above threshold datasets are stored.> \
+  --pathLSM=<Path to CMIP6 land sea mask (included as CMIP6_lsm.nc)>
+```
 
 ```
+python src/at_least_1hr_ERA.py \
+  --pathTarget=<Path to directory where data will be stored.> \
+  --pathDat=<Path to directory where hours above threshold datasets are stored.> \
+  --pathLSM=<Path to ERA5 land sea mask (included as ERA5_lsm.nc)>
+```
+
