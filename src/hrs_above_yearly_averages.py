@@ -5,8 +5,6 @@ import pandas as pd
 import numpy as np
 import glob
 from tqdm import tqdm
-from functools import partial
-from tqdm.contrib.concurrent import process_map
 import argparse
 
 parser = argparse.ArgumentParser()
@@ -95,9 +93,6 @@ if __name__ == "__main__":
     for model in models:
         print(model)
         processModel(model=model, df=df, lsm=lsm)
-    # process_map(partial(processModel, df=df, lsm=lsm),
-    #             models,
-    #             max_workers=2, chunksize=1)
 
     if not os.path.isfile("hrs_above_thr.nc"):
         # Read them all and combine them into one xarray dataset

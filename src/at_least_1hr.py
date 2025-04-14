@@ -7,12 +7,19 @@ import numpy as np
 from functools import partial
 from tqdm.contrib.concurrent import process_map
 from tqdm import tqdm
+import argparse
 
-os.chdir("/nvme/h/pgeorgiades/data_p143/cattle_heat/THI_paper/" +
-         "predictions_analysis/at_least_1_hr")
+parser = argparse.ArgumentParser
+parser.add_argument("--pathTarget", type=str, help="Path to directory where target data will be stored.")
+parser.add_argument("--pathDat", type=str, help="Path to directory where the hours above threshold data is stored.")
+args = parser.parse_args()
 
+# Path to target directory
+path_target = args.pathTarget
 # Path to data with hours above threshold per day
-pathDat = "../hrs_above_thr"
+pathDat = args.pathDat
+os.makedirs(path_target, exist_ok=True)
+os.chdir(path_target)
 
 
 # =============================== FUNCTIONS =============================== #

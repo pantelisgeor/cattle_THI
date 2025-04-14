@@ -47,3 +47,32 @@ The global cattle distribution data used in this study is decribed and freely di
 G., & Robinson, T. P. (2018). Global distribution data for cattle, buffaloes,536
 horses, sheep, goats, pigs, chickens and ducks in 2010. Scientific data, 5 (1), 1–11.
 
+### Data analysis procedures
+
+**Hours Above Threshold**
+
+To calculate the hours above the two THI thresholds (68.8 and 84) per day/grid cell, the *hrs_above_thr_analysis.py* script is used as follows:
+
+```python
+python src/hrs_above_thr_analysis.py \
+  --pathTHI=<Path to directory where hourly THI proections are stored> \
+  --pathTarget=<Path to directory where the analysed data will be stored> \
+  --pathERA=<Path to ERA5 data directory.> \
+  --scenario=<ssp245 or ssp585> \
+  --threshold=<68.8 or 84>
+```
+
+The previous script will generate yearly netcdf files for each scenario/year/model combination with the total number of hours above the threshold for each day. To combine them in a yearly dataset the *src/hrs_above_yearly_averages.py* script is used, as:
+
+```python
+python src/hrs_above_yearly_averages.py \
+  --pathDat=<Path to where the daily total number of hours above the threshold datasets are stored.>
+```
+
+**At least one hour above the threshold per day**
+
+To calculate the number of days per grid cell per year that there is at least one hour above the specified THI threshold, the *src/at_least_1hr.py* and *src/at_least_1hr_ERA.py* scripts are used. These scripts use the same output from the previous analysis, so make sure to have created these first before running these two scripts:
+
+```python
+
+```

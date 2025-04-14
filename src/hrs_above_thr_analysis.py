@@ -32,6 +32,7 @@ args = parser.parse_args()
 
 path_models = args.pathTHI
 path_save = args.pathTarget
+pathERA = args.pathERA
 os.chdir(path_models)
 os.makedirs(path_save, exist_ok=True)
 
@@ -164,7 +165,7 @@ def thrAll(model, scenario, df, thr_, path_save):
 
 
 def listERA(
-    pathERA=args.pathERA,
+    pathERA=pathERA,
 ):
     files_ = glob.glob1(pathERA, "*.nc")
     df = pd.DataFrame(
