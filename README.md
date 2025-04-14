@@ -43,9 +43,7 @@ The data utilized in this study are available under a Creative Commons Attributi
 
 **Global cattle distribution**
 
-The global cattle distribution data used in this study is decribed and freely distributed in Gilbert, M., Nicolas, G., Cinardi, G., Van Boeckel, T. P., Vanwambeke, S. O., Wint,535
-G., & Robinson, T. P. (2018). Global distribution data for cattle, buffaloes,536
-horses, sheep, goats, pigs, chickens and ducks in 2010. Scientific data, 5 (1), 1–11.
+The global cattle distribution data used in this study is decribed and freely distributed in Gilbert, M., Nicolas, G., Cinardi, G., Van Boeckel, T. P., Vanwambeke, S. O., Wint, G., & Robinson, T. P. (2018). Global distribution data for cattle, buffaloes, horses, sheep, goats, pigs, chickens and ducks in 2010. Scientific data, 5 (1), 1–11.
 
 ### Data analysis procedures
 
