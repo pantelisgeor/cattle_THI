@@ -7,6 +7,8 @@ M. Neira, P. Georgiades, Y. Proestos, T. Economou, J. Araya, S Malas, M. Omirou,
 ## Abstract
 Cattle farming, a critical agricultural activity, faces economic losses due to heat stress influenced by temperature and humidity. Using the Temperature-Humidity Index (THI) as a non-invasive measure, we analyzed a novel global dataset with hourly THI projections through the century's end. We evaluated the duration and intensity of thermal stress periods and waves under various greenhouse gas emission scenarios, mapping these projections against current cattle distribution data. Our findings indicate that severe heat stress will significantly challenge future cattle farming, with the Americas, Africa, and South-East Asia projected to experience the most substantial increases in thermal stress conditions, highlighting areas where targeted adaptation strategies will be necessary.
 
+![](heat_wave_example.png "Hours spend in heat waves (SSP5-85 - end of century period)")
+
 ## Instructions
 
 ### Environment
@@ -110,15 +112,7 @@ python src/THI_load_yearly.py \
 ```
 
 **Heat Waves**
-
-To calculate the heat waves data run the *heat_waves.sh* bash script with following 5 positional arguments:
-
-```
-chmod +x heat_waves.sh
-./heat_waves.sh <pathERA> <pathTarget> <pathDat> <path to CMIP6 land sea mask> <path to ERA5 land sea mask>
-```
-
-Following this run the *heat_waves_combine.py* script to combine the datasets into yearly summaries:
+predictions_analysis/heat_waves/maps/event_hrs/end_event_hrs_ssp585.pngets into yearly summaries:
 
 ```
 python src/heat_waves_combine.py \
