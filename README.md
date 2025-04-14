@@ -19,6 +19,10 @@ Create a new environment and install the following dependencies:
 4. pandas, numpy
 5. tqdm
 
+
+#### NOTE:
+These scripts were developed and tested on a single node of the Cyprus Institute's High Performance Computing Facility (HPCF) equipped with 2xAMD 64 core CPUs and 256 GB of RAM. To download and process all the data ~21TB of space is required.
+
 ### Data
 
 **ERA5 hourly data on single levels from 1940 to present**
@@ -49,6 +53,7 @@ The data utilized in this study are available under a Creative Commons Attributi
 The global cattle distribution data used in this study is decribed and freely distributed in Gilbert, M., Nicolas, G., Cinardi, G., Van Boeckel, T. P., Vanwambeke, S. O., Wint, G., & Robinson, T. P. (2018). Global distribution data for cattle, buffaloes, horses, sheep, goats, pigs, chickens and ducks in 2010. Scientific data, 5 (1), 1–11.
 
 ### Data analysis procedures
+
 
 **Hours Above Threshold**
 
@@ -87,4 +92,22 @@ python src/at_least_1hr_ERA.py \
   --pathDat=<Path to directory where hours above threshold datasets are stored.> \
   --pathLSM=<Path to ERA5 land sea mask (included as ERA5_lsm.nc)>
 ```
+
+**THI Load**
+
+To calculate the THI Load (THI units above the threshold per day), the src/THI_load.py is used:\
+
+```
+python src/THI_load.py \
+  --pathDat=<Path to directory where hourly THI proections are stored> \
+  --pathTarget=<Path to directory where THI load datasats will be stored.>
+```
+
+```
+python src/THI_load_yearly.py \
+  --pathDat=<Path to the THI load data generated above.> \
+  --pathLSM=<Path to the CMIP6 land sea mask (included).>
+```
+
+**Heat Waves**
 
