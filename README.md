@@ -1,4 +1,4 @@
-# Climate Change and Thermal Stress in Cattle (Code base)
+# Climate Change and Thermal Stress in Cattle: Global Projections with High Temporal Resolution
 
 M. Neira, P. Georgiades, Y. Proestos, T. Economou, J. Araya, S Malas, M. Omirou, D. Sparaggis, G. Hadjipavlou, J. Lelieveld
 
@@ -112,7 +112,15 @@ python src/THI_load_yearly.py \
 ```
 
 **Heat Waves**
-predictions_analysis/heat_waves/maps/event_hrs/end_event_hrs_ssp585.pngets into yearly summaries:
+
+For the heat wave calculations, run the *heat_waves.sh* bash script, which takes 5 positional arguments:
+
+```
+chmod +x heat_waves.sh
+./heat_waves.sh <pathERA> <pathTarget> <pathDat> <pathlsmCMIP6> <pathlsmERA5>
+```
+
+and to convert them into yearly summaries:
 
 ```
 python src/heat_waves_combine.py \
